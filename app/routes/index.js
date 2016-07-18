@@ -7,6 +7,7 @@ module.exports = function (app) {
         var LivroDAO = new app.infra.LivroDAO(connectionDB);
         LivroDAO.lista(function (err, result) {
             if (err) {
+                console(err);
                 return next(err);
             }
             res.format({
