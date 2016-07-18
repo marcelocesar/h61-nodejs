@@ -11,8 +11,8 @@ function expressConfig() {
     app.use(express.static('./app/public'));
     app.set('view engine', 'ejs');
     app.set('views', './app/views');
-    app.set('host', 'localhost');
-    app.set('port', 3000);
+    app.set('host', process.env.HOST || 'localhost');
+    app.set('port', process.env.PORT || 3000);
     
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
