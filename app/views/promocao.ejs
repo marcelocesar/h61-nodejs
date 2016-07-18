@@ -1,0 +1,41 @@
+<% include layout-header.ejs %>
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
+        <h1>Nova Promocao</h1>
+        <% if (errorsValidation) { %>
+        <% errorsValidation.forEach(function(error) { %>
+        <%= error.param %> - <%= error.msg %><br>
+        <% }) %>
+        <% } %>
+
+        <form action="/promocao" method="post">
+            <!-- Simple Textfield -->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--4-col">
+                <input class="mdl-textfield__input" type="text" id="promocao" name="promocao">
+                <label class="mdl-textfield__label" for="title">Promocao</label>
+            </div>
+            <br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--4-col">
+                <select class="mdl-textfield__input" id="livro[id]" name="livro[id]">
+                    <option>Selecione</option>
+                    <% livros.forEach(function (livro) { %>
+                        <option value="<%= livro.id %>"><%= livro.title %></option>
+                    <% }) %>
+                </select>
+                <label class="mdl-textfield__label" for="title">Livro</label>
+            </div>
+            <br>
+            <br>
+            <br>
+            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                Cadastrar promoção
+            </button>
+            <a href="/admin" class="mdl-button mdl-js-button">
+                Voltar
+            </a>
+        </form>
+    </div>
+</div>
+
+<% include layout-footer.ejs %>

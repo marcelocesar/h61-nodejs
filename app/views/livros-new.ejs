@@ -1,0 +1,41 @@
+<% include layout-header.ejs %>
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
+        <h1>Novo Livro</h1>
+        <% if (errorsValidation) { %>
+            <% errorsValidation.forEach(function(error) { %>
+                <%= error.param %> - <%= error.msg %><br>
+            <% }) %>
+        <% } %>
+
+        <form action="/livros" method="post">
+            <!-- Simple Textfield -->
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--4-col">
+                <input class="mdl-textfield__input" value="<%= livro.title %>" type="text" id="title" name="title">
+                <label class="mdl-textfield__label" for="title">Titulo</label>
+            </div>
+            <br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--4-col">
+                <input class="mdl-textfield__input" value="<%= livro.description %>" type="text" id="description" name="description">
+                <label class="mdl-textfield__label" for="description">Descrição</label>
+            </div>
+            <br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--4-col">
+                <input class="mdl-textfield__input" value="<%= livro.price %>" type="text" id="price" name="price">
+                <label class="mdl-textfield__label" for="price">Preço</label>
+                <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+            <br>
+            <br>
+            <input type="submit" value="salvar"
+                   class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"/>
+            <a href="/livros" class="mdl-button mdl-js-button">
+                Voltar
+            </a>
+        </form>
+    </div>
+</div>
+
+<% include layout-footer.ejs %>

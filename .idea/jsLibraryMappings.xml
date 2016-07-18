@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="PROJECT" libraries="{angularjs-DefinitelyTyped, body-parser-DefinitelyTyped, casadocodigo node_modules, cors-DefinitelyTyped, express-DefinitelyTyped, express-domain-middleware-DefinitelyTyped, express-handlebars-DefinitelyTyped, express-myconnection-DefinitelyTyped, express-openapi-DefinitelyTyped, express-partials-DefinitelyTyped, express-route-fs-DefinitelyTyped, express-validator-DefinitelyTyped, material-design-lite-DefinitelyTyped, mocha-DefinitelyTyped, mongodb-DefinitelyTyped, mongoose-DefinitelyTyped, mongoose-auto-increment-DefinitelyTyped, mongoose-deep-populate-DefinitelyTyped, mongoose-mock-DefinitelyTyped, mysql-DefinitelyTyped, node-DefinitelyTyped, sql.js-DefinitelyTyped, superagent-DefinitelyTyped, supertest-DefinitelyTyped, supertest-as-promised-DefinitelyTyped}" />
+    <includedPredefinedLibrary name="Node.js Core" />
+  </component>
+</project>

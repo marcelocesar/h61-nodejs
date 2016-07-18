@@ -1,0 +1,35 @@
+<% include layout-header.ejs %>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
+        <h1>Livros
+            <a href="/livros/new" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">add</i>
+            </a>
+        </h1>
+
+        <div class="table-responsive-vertical shadow-z-1">
+            <table width="100%" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>titulo</th>
+                    <th>descrição</th>
+                    <th>preço</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% livros.forEach(function (livro) { %>
+                <tr>
+                    <td><%= livro.id %></td>
+                    <td><%= livro.title %></td>
+                    <td><%= livro.description %></td>
+                    <td><%= livro.price %></td>
+                </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<% include layout-footer.ejs %>
