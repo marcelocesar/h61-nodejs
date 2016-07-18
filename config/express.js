@@ -26,13 +26,13 @@ function expressConfig() {
         res.status(400).render('errors/404');
     });
     
-    app.use(function (error, req, res, next) {
+/*    app.use(function (error, req, res, next) {
         if(process.env.NODE_ENV === 'production'){
             res.status(500).render('errors/500');
             return;
         }
         next(error);
-    });
+    });*/
     
     return app;
 }
