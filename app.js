@@ -6,6 +6,13 @@ var oi = require('socket.io')(http);
 
 app.set('io', oi);
 
-http.listen(app.get('port'), function () {
-    console.log('Server running at http://' + app.get('host') + ':' + app.get('port'));
+//var porta = process.env.PORT || 3000;
+
+var server = http.listen(app.get('port'), function () {
+    
+    var host = server.address().address;
+    var port = server.address().port;
+    
+    console.log('Server running at http://%s:%s', host, port);
 });
+
